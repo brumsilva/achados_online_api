@@ -1,3 +1,4 @@
+import { IsPublic } from './../auth/decorators/is-public.decorator';
 import {
   Body,
   Controller,
