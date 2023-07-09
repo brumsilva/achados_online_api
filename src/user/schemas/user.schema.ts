@@ -1,11 +1,10 @@
 /* eslint-disable prettier/prettier */
 import * as mongoose from 'mongoose';
-import { FilmManagement } from './film.schema';
+import { Movie } from '../entities/movie.entity';
 export const UserSchema = new mongoose.Schema({
   id: Number,
-  name: String,
-  age: Number,
-  username: String,
+  email: String,
   password: String,
-  FilmColection: [FilmManagement],
+  name: String,
+  favoriteMovies: Array<Movie>,
 });
