@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import * as mongoose from 'mongoose';
-export const FilmManagement = new mongoose.Schema({
+export const FavoriteMovies = new mongoose.Schema({
   adult: Boolean,
   backdrop_path: String,
   genre_ids: Array<number>,
