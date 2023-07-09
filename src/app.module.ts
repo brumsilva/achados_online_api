@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 import { APP_GUARD } from '@nestjs/core';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -9,9 +10,7 @@ import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      'mongodb+srv://brumsilva:Brun1997.@clusterdemo.39gxlfq.mongodb.net/',
-    ),
+    MongooseModule.forRoot(process.env.DATABASE_URL),
     UserModule,
     AuthModule,
   ],
