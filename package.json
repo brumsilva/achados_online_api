@@ -1,6 +1,9 @@
 {
   "name": "films-management-service",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=14 <16"
+  },
   "description": "",
   "author": "",
   "private": true,
