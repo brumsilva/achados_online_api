@@ -17,10 +17,13 @@ export class FavoritesService {
     email: string,
     movieDto: AddFavoriteMovieDto,
   ): Promise<User> {
+    console.log(email);
     const user = await this.userModel.findOne({ email }).exec();
     if (!user) {
       throw new NotFoundException('User not found');
     }
+
+    console.log(user);
 
     const isMovieAlreadyAdded = user.favoriteMovies.some(
       (favMovie) => favMovie.id === movieDto.id,

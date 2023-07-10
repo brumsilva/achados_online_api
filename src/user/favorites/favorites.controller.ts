@@ -7,19 +7,19 @@ import { AddFavoriteMovieDto } from '../dto/create-favorites.dto';
 export class FavoritesController {
   constructor(private readonly favoritesService: FavoritesService) {}
 
-  @Post()
+  @Post(':email')
   async addMovieToFavorite(
-    @Param('userEmail') userEmail: string,
+    @Param('email') email: string,
     @Body() movieDto: AddFavoriteMovieDto,
   ): Promise<User> {
-    return this.favoritesService.addMovieToFavorites(userEmail, movieDto);
+    return this.favoritesService.addMovieToFavorites(email, movieDto);
   }
 
-  @Delete(':userEmail')
+  @Delete(':email')
   async removeMovieFromFavorite(
-    @Param('userEmail') userEmail: string,
+    @Param('email') email: string,
     @Body() movieDto: AddFavoriteMovieDto,
   ): Promise<User> {
-    return this.favoritesService.removeMovieFromFavorites(userEmail, movieDto);
+    return this.favoritesService.removeMovieFromFavorites(email, movieDto);
   }
 }
